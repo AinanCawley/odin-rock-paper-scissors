@@ -89,13 +89,18 @@ function evaluateRound(playerSelection, computerSelection)
         }
     }
 
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
     if(playerStatus==0)
     {
-        return "You lose!";
+        computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
+        return "You lose! " + computerSelection + " beats " + playerSelection + "!";
     }
     if(playerStatus==1)
     {
-        return "You win!";
+        playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+        return "You win! " + playerSelection + " beats " + computerSelection + "!";
     }
 
 }
