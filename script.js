@@ -124,7 +124,7 @@ function game()
 {
     for(let i=0; i>-1; i++)
     {
-        let playerChoice = window.prompt("Rock, paper, or scissors?");
+        let playerChoice = window.prompt('Rock, paper, or scissors? \n\nYou can quit by pressing "Cancel" or pressing "OK" without any input.');
 
         if (playerChoice==null) /* In case the prompt is cancelled so there's no input */
         {
