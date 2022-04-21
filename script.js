@@ -2,7 +2,6 @@ function computerPlay()
 {
     let random = Math.floor( Math.random() * 3 );
 
-    console.log(random);
     if (random==0)
     {
         return "Rock";
@@ -131,6 +130,15 @@ function game()
         {
             return;
         }
+        if (playerChoice==undefined) /* In case the prompt is cancelled so there's no input */
+        {
+            return;
+        }
+        if (playerChoice==="") /* In case the prompt is cancelled so there's no input */
+        {
+            return;
+        }
+        
 
         let result = evaluateRound(playerChoice, computerPlay() );
         alert(result);
