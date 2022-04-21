@@ -57,6 +57,10 @@ function evaluateRound(playerSelection, computerSelection)
 
     if(playerSelection=="ROCK")
     {
+        if(computerSelection=="ROCK")
+        {
+            playerStatus = 2;
+        }
         if(computerSelection=="PAPER")
         {
             playerStatus = 0;
@@ -71,6 +75,10 @@ function evaluateRound(playerSelection, computerSelection)
         if(computerSelection=="ROCK")
         {
             playerStatus = 1;
+        }
+        if(computerSelection=="PAPER")
+        {
+            playerStatus = 2;
         }
         if(computerSelection=="SCISSORS")
         {
@@ -87,6 +95,10 @@ function evaluateRound(playerSelection, computerSelection)
         {
             playerStatus = 1;
         }
+        if(computerSelection=="SCISSORS")
+        {
+            playerStatus = 2;
+        }
     }
 
     playerSelection = playerSelection.toLowerCase();
@@ -101,6 +113,10 @@ function evaluateRound(playerSelection, computerSelection)
     {
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         return "You win! " + playerSelection + " beats " + computerSelection + "!";
+    }
+    if(playerStatus==2)
+    {
+        return "It's a draw! You both picked " + playerSelection + "!";
     }
 
 }
