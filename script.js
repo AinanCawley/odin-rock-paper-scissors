@@ -52,6 +52,11 @@ function evaluateRound(playerSelection, computerSelection)
     playerSelection = playerSelection.toUpperCase();
     computerSelection = computerSelection.toUpperCase();
 
+    if ( ( playerSelection=="ROCK" || ( playerSelection=="PAPER" || playerSelection=="SCISSORS" ) ) == false )
+    {
+        return "Your input was invalid!"; /* To handle typos or just plain wrong inputs */
+    }
+
     let playerStatus;
 
     if(playerSelection=="ROCK")
