@@ -120,3 +120,19 @@ function evaluateRound(playerSelection, computerSelection)
     }
 
 }
+
+function game()
+{
+    for(let i=0; i>-1; i++)
+    {
+        let playerChoice = window.prompt("Rock, paper, or scissors?");
+
+        if (playerChoice==null) /* In case the prompt is cancelled so there's no input */
+        {
+            return;
+        }
+
+        let result = evaluateRound(playerChoice, computerPlay() );
+        alert(result);
+    }
+}
