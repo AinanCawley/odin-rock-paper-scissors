@@ -110,11 +110,13 @@ function evaluateRound(playerSelection, computerSelection)
 
     if(playerStatus==0)
     {
+        computerScore += 1;
         computerSelection = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1);
         return "You lose! " + computerSelection + " beats " + playerSelection + "!";
     }
     if(playerStatus==1)
     {
+        playerScore += 1;
         playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
         return "You win! " + playerSelection + " beats " + computerSelection + "!";
     }
@@ -152,13 +154,28 @@ function game()
 
 /* DOM STUFF */
 
-const rockButton = document.querySelector('#rockButton');
-const paperButton = document.querySelector('#paperButton');
-const scissorsButton = document.querySelector('#scissorsButton');
+const rockButton = document.getElementById('rockButton');
+const paperButton = document.getElementById('paperButton');
+const scissorsButton = document.getElementById('scissorsButton');
+
+const selections = document.createElement('p');
+const result = document.createElement('p');
+const score = document.createElement('p');
+score.innerText = "Player: 0 Computer: 0"
+let playerScore = 0;
+let computerScore = 0;
+
 
 rockButton.addEventListener('click', function(event)
 {
-    console.log(event);
+    let playerChoice = 'Rock';
+    let computerChoice = computerPlay();
+
+    selections.innerText = "You picked rock. Computer picked " + computerChoice.toLowerCase() + ".";
+    result.innerText = evaluateRound(playerChoice,computerChoice);
+    score.innerText = "Player: " + playerScore + " Computer: " + computerScore;
+
+    
 });
 paperButton.addEventListener('click', function(event)
 {

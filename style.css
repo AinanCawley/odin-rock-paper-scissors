@@ -2,12 +2,20 @@
 {
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .buttons
 {
     display: flex;
     gap: 10px;
+}
+
+.score, .results, .selections
+{
+    display: flex;
+    flex-wrap: wrap;
 }
