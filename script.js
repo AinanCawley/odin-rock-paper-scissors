@@ -149,3 +149,22 @@ function game()
         alert(result);
     }
 }
+
+/* DOM STUFF */
+
+const rockButton = document.querySelector('#rockButton');
+const paperButton = document.querySelector('#paperButton');
+const scissorsButton = document.querySelector('#scissorsButton');
+
+rockButton.addEventListener('click', function(event)
+{
+    console.log(event);
+});
+paperButton.addEventListener('click', function(event)
+{
+    console.log(event);
+});
+scissorsButton.addEventListener('click', function(event)
+{
+    console.log(event);
+});
