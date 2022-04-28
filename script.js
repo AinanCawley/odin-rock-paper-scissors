@@ -166,6 +166,7 @@ const selections = document.createElement('p');
 const result = document.createElement('p');
 const score = document.createElement('p');
 score.innerText = "Player: 0 Computer: 0"
+scoreContainer.appendChild(score);
 let playerScore = 0;
 let computerScore = 0;
 
