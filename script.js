@@ -158,6 +158,11 @@ const rockButton = document.getElementById('rockButton');
 const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
 
+const selectionsContainer = document.getElementById('selections');
+console.log(selectionsContainer);
+const resultsContainer = document.getElementById('results');
+const scoreContainer = document.getElementById('score');
+
 const selections = document.createElement('p');
 const result = document.createElement('p');
 const score = document.createElement('p');
@@ -175,7 +180,14 @@ rockButton.addEventListener('click', function(event)
     result.innerText = evaluateRound(playerChoice,computerChoice);
     score.innerText = "Player: " + playerScore + " Computer: " + computerScore;
 
-    
+    selectionsContainer.replaceChildren();
+    selectionsContainer.appendChild(selections);
+
+    resultsContainer.replaceChildren();
+    resultsContainer.appendChild(result);
+
+    scoreContainer.replaceChildren();
+    scoreContainer.appendChild(score);
 });
 paperButton.addEventListener('click', function(event)
 {
