@@ -159,7 +159,6 @@ const paperButton = document.getElementById('paperButton');
 const scissorsButton = document.getElementById('scissorsButton');
 
 const selectionsContainer = document.getElementById('selections');
-console.log(selectionsContainer);
 const resultsContainer = document.getElementById('results');
 const scoreContainer = document.getElementById('score');
 
@@ -189,11 +188,41 @@ rockButton.addEventListener('click', function(event)
     scoreContainer.replaceChildren();
     scoreContainer.appendChild(score);
 });
+
 paperButton.addEventListener('click', function(event)
 {
-    console.log(event);
+    let playerChoice = 'Paper';
+    let computerChoice = computerPlay();
+
+    selections.innerText = "You picked paper. Computer picked " + computerChoice.toLowerCase() + ".";
+    result.innerText = evaluateRound(playerChoice,computerChoice);
+    score.innerText = "Player: " + playerScore + " Computer: " + computerScore;
+
+    selectionsContainer.replaceChildren();
+    selectionsContainer.appendChild(selections);
+
+    resultsContainer.replaceChildren();
+    resultsContainer.appendChild(result);
+
+    scoreContainer.replaceChildren();
+    scoreContainer.appendChild(score);
 });
+
 scissorsButton.addEventListener('click', function(event)
 {
-    console.log(event);
+    let playerChoice = 'Scissors';
+    let computerChoice = computerPlay();
+
+    selections.innerText = "You picked scissors. Computer picked " + computerChoice.toLowerCase() + ".";
+    result.innerText = evaluateRound(playerChoice,computerChoice);
+    score.innerText = "Player: " + playerScore + " Computer: " + computerScore;
+
+    selectionsContainer.replaceChildren();
+    selectionsContainer.appendChild(selections);
+
+    resultsContainer.replaceChildren();
+    resultsContainer.appendChild(result);
+
+    scoreContainer.replaceChildren();
+    scoreContainer.appendChild(score);
 });
